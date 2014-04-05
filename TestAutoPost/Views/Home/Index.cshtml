@@ -1,0 +1,37 @@
+﻿@model TestAutoPost.Models.User
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+
+<section id="loginForm">
+    <h2>Use a kaskus account to log in.</h2>
+
+    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>Log in Form</legend>
+            <table>
+                <tr>
+                    <td>Kaskus Username:</td>
+                    <td>@Html.TextBox("UserName")</td>
+                </tr>
+                <tr>
+                    <td>Kaskus Password:</td>
+                    <td>@Html.TextBox("Password")</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Log in" /></td>
+                </tr>
+            </table>
+        </fieldset>
+    }
+</section>
