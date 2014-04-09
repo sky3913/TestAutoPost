@@ -31,6 +31,7 @@ namespace TestAutoPost.Controllers
                 if (userData.IsValid(user.UserName, user.Password))
                 {
                     FormsAuthentication.SetAuthCookie(user.UserName, false);
+                    Session["User"] = user;
                     return RedirectToAction("Index", "Home");
                 }
                 else

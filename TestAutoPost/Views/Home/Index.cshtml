@@ -1,4 +1,6 @@
-﻿@{
+﻿@model TestAutoPost.Models.Post
+
+@{
     ViewBag.Title = "Index";
 }
 
@@ -24,16 +26,17 @@
         <table>
             <tr>
                 <td>Title:</td>
-                <td>@Html.TextBox("MessageTitle")</td>
+                <td>@Html.TextBoxFor(model => model.MessageTitle)</td>
             </tr>
             <tr>
                 <td>Body:</td>
-                <td>@Html.TextBox("MessageBody")</td>
+                <td>@Html.TextBoxFor(model => model.MessageBody)</td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <input type="submit" value="Submit" /></td>
+                    <input type="submit" value="Submit" />
+                </td>
             </tr>
         </table>
     </fieldset>
