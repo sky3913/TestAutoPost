@@ -25,6 +25,10 @@ D:\Projects\ASP.NET MVC 4\TestAutoPost\TestAutoPost\bin\System.Web.Razor.xml
 D:\Projects\ASP.NET MVC 4\TestAutoPost\TestAutoPost\bin\System.Web.WebPages.xml
 D:\Projects\ASP.NET MVC 4\TestAutoPost\TestAutoPost\bin\System.Web.WebPages.Deployment.xml
 D:\Projects\ASP.NET MVC 4\TestAutoPost\TestAutoPost\bin\System.Web.WebPages.Razor.xml
-D:\Projects\ASP.NET MVC 4\TestAutoPost\TestAutoPost\obj\Debug\TestAutoPost.csprojResolveAssemblyReference.cache
 D:\Projects\ASP.NET MVC 4\TestAutoPost\TestAutoPost\obj\Debug\TestAutoPost.dll
 D:\Projects\ASP.NET MVC 4\TestAutoPost\TestAutoPost\obj\Debug\TestAutoPost.pdb
+D:\Projects\ASP.NET MVC 4\TestAutoPost\TestAutoPost\bin\MongoDB.Bson.dll
+D:\Projects\ASP.NET MVC 4\TestAutoPost\TestAutoPost\bin\MongoDB.Driver.dll
+D:\Projects\ASP.NET MVC 4\TestAutoPost\TestAutoPost\bin\MongoDB.Bson.xml
+D:\Projects\ASP.NET MVC 4\TestAutoPost\TestAutoPost\bin\MongoDB.Driver.xml
+D:\Projects\ASP.NET MVC 4\TestAutoPost\TestAutoPost\obj\Debug\TestAutoPost.csprojResolveAssemblyReference.cache

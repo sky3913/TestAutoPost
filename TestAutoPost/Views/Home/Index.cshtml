@@ -1,37 +1,40 @@
-﻿@model TestAutoPost.Models.User
-
-@{
-    ViewBag.Title = "Log in";
+﻿@{
+    ViewBag.Title = "Index";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
-
-<section id="loginForm">
-    <h2>Use a kaskus account to log in.</h2>
-
-    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
-    {
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
-        <fieldset>
-            <legend>Log in Form</legend>
-            <table>
-                <tr>
-                    <td>Kaskus Username:</td>
-                    <td>@Html.TextBox("UserName")</td>
-                </tr>
-                <tr>
-                    <td>Kaskus Password:</td>
-                    <td>@Html.TextBox("Password")</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Log in" /></td>
-                </tr>
-            </table>
-        </fieldset>
+<div style="width: auto; background-color: #728ea7;">
+    @if (Request.IsAuthenticated) {
+        <strong>@Html.Encode(User.Identity.Name)</strong>
+        @Html.ActionLink("Sign Out", "Logout", "User")
     }
-</section>
+    else {
+        @Html.ActionLink("Sign In", "Login", "User")
+    }
+</div>
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Posting</legend>
+        <table>
+            <tr>
+                <td>Title:</td>
+                <td>@Html.TextBox("MessageTitle")</td>
+            </tr>
+            <tr>
+                <td>Body:</td>
+                <td>@Html.TextBox("MessageBody")</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    </fieldset>
+}
