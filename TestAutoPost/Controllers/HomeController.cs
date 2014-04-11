@@ -28,7 +28,7 @@ namespace TestAutoPost.Controllers
         public ActionResult Index(Post post)
         {
             User user = (User)Session["user"];
-            PostMessage.Send(user.UserName, user.Password, post.MessageTitle + post.MessageTitle);
+            PostMessage.Send(user.UserName, user.Password, post.MessageTitle + post.MessageBody);
             return View();
         }
     }

@@ -11,9 +11,9 @@ namespace TestAutoPost.Helper
 {
     public class PostMessage
     {
-        public static void Send(string username, string password, string dlc_content)
+        public static string Send(string username, string password, string content)
         {
-            byte[] _bytes = Encoding.ASCII.GetBytes(string.Concat("content=", dlc_content));
+            byte[] _bytes = Encoding.ASCII.GetBytes(content);
 
             HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("http://kaskus.co.id");
             string Credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(username + ":" + password));
@@ -34,16 +34,22 @@ namespace TestAutoPost.Helper
             requestStream.Close();
 
             HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            string pageContent = string.Empty;
 
             if (httpWebResponse == null)
-                return;
+                return pageContent;
             else
             {
                 using (StreamReader reader = new StreamReader(httpWebResponse.GetResponseStream()))
                 {
-                    Trace.WriteLine(reader.ReadToEnd());
+                    //Trace.WriteLine(reader.ReadToEnd());
+                    pageContent = reader.ReadToEnd();
                 }
             }
+
+            httpWebResponse.Close();
+
+            return pageContent;
         }
     }
 }
